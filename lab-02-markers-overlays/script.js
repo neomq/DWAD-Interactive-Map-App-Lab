@@ -24,11 +24,3 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
 }).addTo(mapObject); // Add to map object created in line 12
-
-// 4. ADD MARKERS AND OVERLAYS
-// anything that you add onto a map is called an overlay
-// 4.1 create a marker using the L object
-//     and specify the marker coordinates
-let singaporeMarker = L.marker([1.29, 103.85]);
-// 4.2 add the marker to the map
-singaporeMarker.addTo(mapObject);
