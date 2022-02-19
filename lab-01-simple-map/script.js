@@ -32,3 +32,25 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 let singaporeMarker = L.marker([1.29, 103.85]);
 // 4.2 add the marker to the map
 singaporeMarker.addTo(mapObject);
+
+// 5. ADD A POP-UP BOX TO THE MARKER
+// use .bindPopup()
+singaporeMarker.bindPopup("<h2>Singapore</h2><p>Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.</p>");
+// 5.1 ADD EVENT LISTENER FOR MORE CUSTOMISED BEHAVIOUR
+singaporeMarker.addEventListener('click', function(){
+    alert("Hello!");
+    // do anything you want i.e. use axios to fetch data
+    // or change more HTML elements etc..
+})
+
+// 6. ADD BASIC SHAPES TO THE MAP
+// check leaflet documentation for all the possibilities
+// adding a circle using L.circle (in the center of bukit timah)
+// first argument is the coordinates, second argument is the customisation
+// consult leaflet documentation for all the properties that can be used
+let circle = L.circle([1.3294, 103.8021], {
+    color: '#1B84FF',
+    fillColor: 'orange',
+    fillOpacity: 0.5,
+    radius: 500 // meters
+}).addTo(mapObject); // add the shape to the map
