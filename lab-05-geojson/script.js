@@ -27,6 +27,19 @@ async function loadCyclingPath(){
             // layer is the line or shape that is being drawn onto the map
             // console.log(feature.properties) // do this to inspect the feature properties of your geojson file
             layer.bindPopup(feature.properties.Description);
+
+            // feature.properties.Description is HTML
+            let dummyDiv = document.createElement('div');
+            dummyDiv.innerHTML = feature.properties.Description;
+            let columns = dummyDiv.querySelectorAll('td');
+            let pathname = columns[0].innerHTML;
+            let agency = columns[1].innerHTML;
+            layer.bindPopup(`<div>
+                                <ul>
+                                    <li>Path Name: ${pathname}</li>
+                                    <li>Agency: ${agency}</li>
+                                </ul>
+                            </div>`);
         }
     }).addTo(mapObject); // this is also a layer that can go into the base layer or overlays
     
@@ -43,12 +56,25 @@ async function loadNParks(){
     let response = await axios.get('data/nparks.geojson');
     let nparks = L.geoJson(response.data, {
         onEachFeature:function(feature, layer) {
-            layer.bindPopup(feature.properties.Description);
+            // layer.bindPopup(feature.properties.Description);
+            let dummyDiv = document.createElement('div');
+            dummyDiv.innerHTML = feature.properties.Description;
+            let columns = dummyDiv.querySelectorAll('td');
+            let parkname = columns[0].innerHTML;
+            let pathtype = columns[1].innerHTML;
+            let loop = columns[2].innerHTML;
+            layer.bindPopup(`<div>
+                                <ul>
+                                    <li>Path Name: ${parkname}</li>
+                                    <li>Agency: ${pathtype}</li>
+                                    <li>Loop: ${loop}</li>
+                                </ul>
+                            </div>`);
         }
     }).addTo(mapObject); // this is also a layer that can go into the base layer or overlays
     
-     // style the layer
-     nparks.setStyle({
+    // style the layer
+    nparks.setStyle({
         'color': 'green'
     })
     
