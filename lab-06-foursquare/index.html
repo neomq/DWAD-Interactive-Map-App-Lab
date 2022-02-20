@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. create a parent: map container (set it to relative position in CSS) -->
+    <!-- 2. put the singapore map into the container (set it to absolute position in CSS) -->
+    <!-- 3. inside the map container, create another search container -->
+    <!-- 4. Position the search container on top of the Singapore map using absolute position in CSS -->
+
+    <div id="map-container">
+        <div id="sgMap"></div>
+        <div id="search-container">
+            <input id="search-input" type="text"/>
+            <button id="search-btn">Search</button>
+        </div>
+    </div>
+   
+
+    <!-- leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- Axios JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- data JS -->
+    <script src="data.js"></script>
+
+    <!-- Own JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
