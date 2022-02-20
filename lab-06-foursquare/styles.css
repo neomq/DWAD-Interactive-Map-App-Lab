@@ -22,3 +22,8 @@
 #search-btn {
     margin-left: 5px;
 }
+
+/* Style the search result div */
+.search-result {
+    padding: 10px;
+}

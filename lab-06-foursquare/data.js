@@ -16,7 +16,8 @@ async function search(lat, lng, query) {
         params: {
             'll': ll,
             'v': '02112022', // lock the version of foursquare to the one on this date
-            'query': query
+            'query': query,
+            'radius': 100000
         },
         // headers is for us to put in the API Key
         // Note: use uppercase 'A' and american spelling otherwise it will not work

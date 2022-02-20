@@ -32,6 +32,10 @@ async function main() {
             let response = await search(center.lat, center.lng, query);
             // console.log(response) // to check the search output
 
+            // 8. Display the search results on the map
+            // 8.1 First get the div that will display the search result
+            let searchResultElement = document.querySelector("#search-results");
+
             // 5. Create the markers
             for (let eachVenue of response.results){
                 let coordinate = [eachVenue.geocodes.main.latitude, eachVenue.geocodes.main.longitude]
@@ -43,6 +47,25 @@ async function main() {
                 // marker.addTo(mapObject);
                 // 6.1 Add the marker to search result layer instead of the map
                 marker.addTo(searchResultLayer);
+
+                // 8.2 Create the child <div> element to append to #search-results div
+                let resultElement = document.createElement('div');
+                resultElement.innerHTML = eachVenue.name;
+                resultElement.className = 'search-result';
+                
+                // 8.3 Add an event listener to resultElement
+                resultElement.addEventListener('click', function(){
+                    
+                    // when user clicks on the result the map will zoom to the location
+                    mapObject.flyTo(coordinate, 16); // check out leaflet documentation - map methods for modifying map state
+
+                    // when user clicks on the result, marker popup will appear
+                    marker.openPopup();
+                })
+
+                // 8.2 append resultElement to #search-results
+                //     test out the feature on the map
+                searchResultElement.appendChild(resultElement);
 
             }
         })
