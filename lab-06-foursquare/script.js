@@ -15,6 +15,18 @@ async function main() {
 
         window.addEventListener('DOMContentLoaded', function(){
 
+            // 9. TOGGLE SEARCH BTN FOR MOBILE RESPONSIVENESS
+            document.querySelector('#toggle-search-btn').addEventListener('click', async () => {
+                let currentDisplay =
+                    document.querySelector("#search-container").style.display;
+                if (!currentDisplay || currentDisplay == 'none') {
+                    document.querySelector("#search-container").style.display = "block";
+                } else {
+                    document.querySelector("#search-container").style.display = "none";
+                }
+            })
+        
+
             // 4. Create function that will run when user clicks on the search button on the map
             document.querySelector('#search-btn').addEventListener('click', async function(){
             

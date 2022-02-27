@@ -8,7 +8,7 @@
 
 #search-container {
     position: absolute;
-    top: 10px;
+    top: 30px;
     left: 50px;
     z-index: 314159;
     background-color: rgba(255, 255, 255, 0.9);
@@ -17,13 +17,33 @@
     padding-top: 15px;
     padding-bottom: 0;
     padding-left: 15px;
+    display: none;
 }
 
 #search-btn {
     margin-left: 5px;
 }
 
+#toggle-search-btn {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    z-index: 314159;
+}
+
 /* Style the search result div */
 .search-result {
     padding: 10px;
 }
+
+/* for desktop */
+@media (min-width: 767px) {
+    #search-container {
+        display: block;
+        top: 5px;
+    }
+
+    #toggle-search-btn {
+        display: none;
+    }
+} 

@@ -4,7 +4,7 @@ const API_KEY="fsq39KAcQFbTaS1UcZfkT7ZQAkGv7nIP4Wtkhziu4dcLibg=";
 
 // 2. Create an async function search() that takes in the lat, lng and query
 async function search(lat, lng, query) {
-    let ll = lat + ',' + lng; // pass the lat, lng to foursquare not as an array but as a string - lat & lng seperated by a comma
+    let ll = lat + ',' + lng; // pass the lat, lng to foursquare as a string - lat & lng seperated by a comma
 
     // example:
     // if ll is "103,31"
